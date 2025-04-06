@@ -15,7 +15,7 @@
       box-sizing: border-box;
     }
 
-    /* Advanced Christian-themed Loader with Transparent Background */
+    /* Advanced Christian-themed Loader with Blurred Background */
     .loader {
       position: fixed;
       top: 0;
@@ -28,7 +28,9 @@
       flex-direction: column;
       z-index: 1000;
       animation: fadeOut 0.9s 9s forwards;
-      background-color: transparent;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .loader-content {
@@ -1023,7 +1025,7 @@
   </style>
 </head>
 <body>
-  <!-- Advanced Christian-themed Loader with Transparent Background -->
+  <!-- Advanced Christian-themed Loader with Blurred Background -->
   <div class="loader">
     <div class="loader-content">
       <div class="halo"></div>
