@@ -1340,26 +1340,34 @@
         $(this).find('.stat-value').toggle();
       });
       
-      // Sermons toggle
+      // Sermons toggle - fixed version
       $('#sermons-btn').click(function(){
-        $('#sermons').toggleClass('active');
         $('#testimonies').removeClass('active');
         $('#message-form').removeClass('active');
-        $(this).text(function(i, text){
-          return text === "Sermons" ? "Close Sermons" : "Sermons";
-        });
-        $('#testimonies-btn').text("Testimonies");
+        
+        if ($('#sermons').hasClass('active')) {
+          $('#sermons').removeClass('active');
+          $(this).html('<i class="fas fa-church"></i> Sermons');
+        } else {
+          $('#sermons').addClass('active');
+          $(this).html('<i class="fas fa-church"></i> Close Sermons');
+          $('#testimonies-btn').html('<i class="fas fa-hand-holding-heart"></i> Testimonies');
+        }
       });
       
-      // Testimonies toggle
+      // Testimonies toggle - fixed version
       $('#testimonies-btn').click(function(){
-        $('#testimonies').toggleClass('active');
         $('#sermons').removeClass('active');
         $('#message-form').removeClass('active');
-        $(this).text(function(i, text){
-          return text === "Testimonies" ? "Close Testimonies" : "Testimonies";
-        });
-        $('#sermons-btn').text("Sermons");
+        
+        if ($('#testimonies').hasClass('active')) {
+          $('#testimonies').removeClass('active');
+          $(this).html('<i class="fas fa-hand-holding-heart"></i> Testimonies');
+        } else {
+          $('#testimonies').addClass('active');
+          $(this).html('<i class="fas fa-hand-holding-heart"></i> Close Testimonies');
+          $('#sermons-btn').html('<i class="fas fa-church"></i> Sermons');
+        }
       });
       
       // Form submission handling
